@@ -30,7 +30,7 @@ namespace TowerDefense.Scripts
             Exponential
         }
 
-        private void Awake()
+        private void Awake() //TODO: This still doesn't quite render the number in a good spot on the UI
         {
             enemyPrefab = (Transform)Resources.Load("PreFabs/Enemy", typeof(Transform));
             spawnPoint = (Transform)Resources.Load("PreFabs/Start", typeof(Transform));
