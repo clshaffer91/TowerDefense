@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace TowerDefense.Scripts
 {
@@ -12,7 +11,6 @@ namespace TowerDefense.Scripts
         [Header("Prefabs")]
         private Transform enemyPrefab;
         private Transform spawnPoint;
-        private Text waveCountdownText;
 
         //load these from a data source
         [Header("Spawning Properties")]
@@ -35,15 +33,6 @@ namespace TowerDefense.Scripts
             enemyPrefab = (Transform)Resources.Load("PreFabs/Enemy", typeof(Transform));
             spawnPoint = (Transform)Resources.Load("PreFabs/Start", typeof(Transform));
             Instantiate(spawnPoint);
-            var waveCountdownPrefab = (Text)Resources.Load("PreFabs/WaveCountdown", typeof(Text));
-            if (waveCountdownPrefab != null)
-            {
-                GameObject canvas = new GameObject();
-                canvas.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
-                canvas.name = "Canvas";
-                waveCountdownText = Instantiate(waveCountdownPrefab);
-                waveCountdownText.gameObject.transform.parent = canvas.transform;
-            }
         }
 
         // Start is called before the first frame update
@@ -67,7 +56,7 @@ namespace TowerDefense.Scripts
             }
             waveCountdown -= Time.deltaTime;
             initialCountdown -= Time.deltaTime;
-            waveCountdownText.text = Mathf.Floor(waveCountdown).ToString();
+            GameCanvas.gameCanvasInstance.SetWaveCountdownTimer(waveCountdown);
         }
 
         private void RoundStart()

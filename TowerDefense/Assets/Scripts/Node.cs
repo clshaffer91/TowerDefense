@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TowerDefense.Scripts
 {
@@ -10,6 +11,8 @@ namespace TowerDefense.Scripts
 
         private GameObject tower;
 
+        BuildManager buildManager;
+
         private void Awake()
         {
             nodeHeightOffset = new Vector3(0, gameObject.transform.position.y, 0);
@@ -19,6 +22,7 @@ namespace TowerDefense.Scripts
         {
             render = GetComponent<Renderer>();
             defaultNodeColor = render.material.color;
+            buildManager = BuildManager.buildManagerInstance;
         }
 
         // Update is called once per frame
@@ -29,6 +33,10 @@ namespace TowerDefense.Scripts
 
         private void OnMouseEnter()
         {
+            if (EventSystem.current.IsPointerOverGameObject())  //TODO: This isn't working as intended
+                return;
+            if (buildManager.GetTowerToBuild() == null)
+                return;
             render.material.color = Color.green;
         }
 
@@ -39,13 +47,15 @@ namespace TowerDefense.Scripts
 
         private void OnMouseDown()
         {
+            if (buildManager.GetTowerToBuild() == null)
+                return;
             if (tower != null)
             {
-                Debug.Log("Can't Build there"); //TODO: Display on screen
+                Debug.Log("Can't Build there, already occupied"); //TODO: Display on screen
                 return;
             }
 
-            GameObject towerToBuild = Shop.shopInstance.GetTowerToBuild();
+            GameObject towerToBuild = buildManager.GetTowerToBuild();
             tower = Instantiate(towerToBuild, transform.position + nodeHeightOffset, transform.rotation);
         }
     }

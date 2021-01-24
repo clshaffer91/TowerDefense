@@ -1,26 +1,19 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TowerDefense.Scripts
 {
-    public class Shop : MonoBehaviour  //might need Builder as a separate class
+    public class Shop : MonoBehaviour
     {
-        public static Shop shopInstance;  //implement a better singleton pattern - figure out DI
-
-        private GameObject towerToBuild;
-
-        private GameObject defaultTower;
+        private BuildManager buildManager;
+        private GameObject towerSelected;  //load in from TowerRepository
+        private GameObject shopPanelPrefab;
+        private Transform shopPanel;
 
         private void Awake()
         {
-            if (shopInstance != null)
-            {
-                Debug.Log("2 Shops...how'd ya do that?");
-                throw new InvalidOperationException();
-            }
-            shopInstance = this;
-
-            defaultTower = (GameObject)Resources.Load("PreFabs/Turret", typeof(GameObject));
+            shopPanelPrefab = (GameObject)Resources.Load("PreFabs/ShopPanel", typeof(GameObject));
+            shopPanel = Instantiate(shopPanelPrefab.gameObject.transform);
+            shopPanel.transform.parent = GameCanvas.canvasGameObject.transform;
         }
 
         // Start is called before the first frame update
@@ -35,10 +28,9 @@ namespace TowerDefense.Scripts
 
         }
 
-        public GameObject GetTowerToBuild()
+        public void PurchaseTower()
         {
-            towerToBuild = defaultTower; //TODO: more complicated logic
-            return towerToBuild;
+            buildManager.SetTowerToBuild(towerSelected);
         }
     }
 }
