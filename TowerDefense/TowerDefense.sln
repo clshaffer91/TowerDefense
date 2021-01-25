@@ -1,7 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "Scripts.csproj", "{EF3810D5-85A7-4087-4BAD-0A6BA47272E4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Scripts", "TowerDefense.Scripts.csproj", "{D6E10497-CA65-6C9E-537D-5C36C01E1425}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.DataAccess", "..\TowerDefense.DataAccess\TowerDefense.DataAccess.csproj", "{9C9DBAD5-E8F5-42F4-84C2-4ABFEFDB4219}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Logic", "..\TowerDefense.Logic\TowerDefense.Logic.csproj", "{937912F6-94BD-49CB-9D46-C52C87137C56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.Database", "..\TowerDefense.Database\TowerDefense.Database.csproj", "{2F873E66-3288-406A-9AD6-F6FB207F9E1A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TowerDefense.DataAccess.Tests", "..\TowerDefense.DataAccess.Tests\TowerDefense.DataAccess.Tests.csproj", "{96018CB5-008F-45AF-A604-9906018E4D0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +17,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF3810D5-85A7-4087-4BAD-0A6BA47272E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF3810D5-85A7-4087-4BAD-0A6BA47272E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF3810D5-85A7-4087-4BAD-0A6BA47272E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF3810D5-85A7-4087-4BAD-0A6BA47272E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6E10497-CA65-6C9E-537D-5C36C01E1425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6E10497-CA65-6C9E-537D-5C36C01E1425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6E10497-CA65-6C9E-537D-5C36C01E1425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6E10497-CA65-6C9E-537D-5C36C01E1425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9DBAD5-E8F5-42F4-84C2-4ABFEFDB4219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9DBAD5-E8F5-42F4-84C2-4ABFEFDB4219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9DBAD5-E8F5-42F4-84C2-4ABFEFDB4219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9DBAD5-E8F5-42F4-84C2-4ABFEFDB4219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{937912F6-94BD-49CB-9D46-C52C87137C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{937912F6-94BD-49CB-9D46-C52C87137C56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{937912F6-94BD-49CB-9D46-C52C87137C56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{937912F6-94BD-49CB-9D46-C52C87137C56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F873E66-3288-406A-9AD6-F6FB207F9E1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F873E66-3288-406A-9AD6-F6FB207F9E1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F873E66-3288-406A-9AD6-F6FB207F9E1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F873E66-3288-406A-9AD6-F6FB207F9E1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96018CB5-008F-45AF-A604-9906018E4D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96018CB5-008F-45AF-A604-9906018E4D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96018CB5-008F-45AF-A604-9906018E4D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96018CB5-008F-45AF-A604-9906018E4D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

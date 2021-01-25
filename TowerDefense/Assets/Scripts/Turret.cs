@@ -1,4 +1,4 @@
-﻿using TowerDefense.Scripts.BaseClasses;
+﻿using TowerDefense.Logic;
 using UnityEngine;
 
 namespace TowerDefense.Scripts
